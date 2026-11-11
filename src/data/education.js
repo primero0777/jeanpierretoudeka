@@ -32,10 +32,10 @@ export const contact = {
   // Réseaux sociaux : coller l'adresse du profil dans url. Une icône sans url n'est pas affichée.
   socials: [
     { id: 'linkedin', label: 'LinkedIn', url: 'https://linkedin.com/in/jeanpierretoudeka' },
-    { id: 'facebook', label: 'Facebook', url: '' },
+    { id: 'facebook', label: 'Facebook', url: 'https://www.facebook.com/profile.php?id=100092181761338' },
     { id: 'instagram', label: 'Instagram', url: 'https://www.instagram.com/dubson_dick/' },
     { id: 'tiktok', label: 'TikTok', url: 'https://www.tiktok.com/@dubson.dick' },
-    { id: 'whatsapp', label: 'WhatsApp', url: '' },
+    { id: 'whatsapp', label: 'WhatsApp', url: 'https://wa.me/22871364835' },
   ],
   address: 'Adidogomé Wessomé, Lomé, Togo',
 }
