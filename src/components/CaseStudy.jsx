@@ -1,18 +1,34 @@
-import { useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
+import { useCallback, useEffect, useLayoutEffect, useRef } from 'react'
+import { gsap, reducedMotion } from '../animations/gsapConfig'
 import { X } from 'lucide-react'
 import PhotoSlot from './PhotoSlot.jsx'
 import { pauseScroll, resumeScroll } from '../animations/smoothScroll'
 
 export default function CaseStudy({ project, onClose }) {
   const closeRef = useRef(null)
+  const ref = useRef(null)
+  const closing = useRef(false)
+
+  useLayoutEffect(() => {
+    if (reducedMotion()) return
+    const tween = gsap.fromTo(ref.current, { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.7, ease: 'power4.inOut' })
+    return () => tween.kill()
+  }, [])
+
+  // On joue la fermeture, puis on prévient le parent qui retire la fiche.
+  const close = useCallback(() => {
+    if (closing.current) return
+    closing.current = true
+    if (reducedMotion()) { onClose(); return }
+    gsap.to(ref.current, { clipPath: 'inset(100% 0% 0% 0%)', duration: 0.6, ease: 'power4.inOut', onComplete: onClose })
+  }, [onClose])
 
   useEffect(() => {
     const previous = document.activeElement
     pauseScroll()
     document.body.style.overflow = 'hidden'
     closeRef.current?.focus()
-    const key = (e) => e.key === 'Escape' && onClose()
+    const key = (e) => e.key === 'Escape' && close()
     window.addEventListener('keydown', key)
     return () => {
       window.removeEventListener('keydown', key)
@@ -20,14 +36,12 @@ export default function CaseStudy({ project, onClose }) {
       resumeScroll()
       previous?.focus?.()
     }
-  }, [onClose])
+  }, [close])
 
   return (
-    <motion.div className="case" role="dialog" aria-modal="true" aria-labelledby="case-title" data-lenis-prevent
-      initial={{ clipPath: 'inset(100% 0% 0% 0%)' }} animate={{ clipPath: 'inset(0% 0% 0% 0%)' }} exit={{ clipPath: 'inset(100% 0% 0% 0%)' }}
-      transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}>
+    <div className="case" role="dialog" aria-modal="true" aria-labelledby="case-title" data-lenis-prevent ref={ref}>
       <div className="wrap case-inner">
-        <button ref={closeRef} className="case-close" onClick={onClose}><X size={18} aria-hidden="true" /> Fermer</button>
+        <button ref={closeRef} className="case-close" onClick={close}><X size={18} aria-hidden="true" /> Fermer</button>
         <p className="section-label"><span>{project.role}</span> / {project.category}</p>
         <h2 id="case-title" className="section-title">{project.title}</h2>
         <div className="case-grid">
@@ -46,6 +60,6 @@ export default function CaseStudy({ project, onClose }) {
           {project.gallery.map((g, i) => <PhotoSlot key={i} src={g.image} hint={g.hint} ratio={g.ratio || '4 / 3'} className={g.wide ? 'wide' : ''} caption />)}
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }

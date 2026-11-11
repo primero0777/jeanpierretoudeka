@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { gsap, reducedMotion } from '../animations/gsapConfig'
 import { ArrowUpRight, Menu, X } from 'lucide-react'
 import Magnetic from './Magnetic.jsx'
 import { scrollToTarget, pauseScroll, resumeScroll } from '../animations/smoothScroll'
@@ -15,6 +15,27 @@ export default function Navbar() {
   const [active, setActive] = useState('')
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [shown, setShown] = useState(false)
+  const menuRef = useRef(null)
+
+  // Le menu reste monté pendant l'animation de fermeture, puis il est retiré.
+  useEffect(() => {
+    if (open) { setShown(true); return }
+    if (!shown || !menuRef.current) return
+    if (reducedMotion()) { setShown(false); return }
+    const tween = gsap.to(menuRef.current, { clipPath: 'inset(0% 0% 100% 0%)', duration: 0.45, ease: 'power3.inOut', onComplete: () => setShown(false) })
+    return () => tween.kill()
+  }, [open]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  useLayoutEffect(() => {
+    if (!shown || !open || !menuRef.current || reducedMotion()) return
+    const el = menuRef.current
+    const ctx = gsap.context(() => {
+      gsap.fromTo(el, { clipPath: 'inset(0% 0% 100% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.55, ease: 'power4.inOut' })
+      gsap.fromTo(el.querySelectorAll('a'), { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, stagger: 0.06, delay: 0.2, ease: 'power3.out' })
+    }, el)
+    return () => ctx.revert()
+  }, [shown]) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -60,20 +81,15 @@ export default function Navbar() {
           </button>
         </div>
       </header>
-      <AnimatePresence>
-        {open && (
-          <motion.nav id="menu-mobile" className="mobile-menu" aria-label="Menu mobile"
-            initial={{ clipPath: 'inset(0% 0% 100% 0%)' }} animate={{ clipPath: 'inset(0% 0% 0% 0%)' }} exit={{ clipPath: 'inset(0% 0% 100% 0%)' }}
-            transition={{ duration: 0.55, ease: [0.76, 0, 0.24, 1] }}>
-            {[...links, { id: 'contact', label: 'Contact' }].map((l, i) => (
-              <motion.a key={l.id} href={`#${l.id}`} onClick={(e) => go(e, l.id)}
-                initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 + i * 0.06, duration: 0.5 }}>
-                <span>0{i + 1}</span>{l.label}
-              </motion.a>
-            ))}
-          </motion.nav>
-        )}
-      </AnimatePresence>
+      {shown && (
+        <nav id="menu-mobile" className="mobile-menu" aria-label="Menu mobile" ref={menuRef}>
+          {[...links, { id: 'contact', label: 'Contact' }].map((l, i) => (
+            <a key={l.id} href={`#${l.id}`} onClick={(e) => go(e, l.id)}>
+              <span>0{i + 1}</span>{l.label}
+            </a>
+          ))}
+        </nav>
+      )}
     </>
   )
 }

@@ -1,7 +1,7 @@
 # Portfolio de Jean-Pierre Toudeka
 
 Site personnel de Jean-Pierre Toudeka, conducteur de travaux génie civil à Lomé.
-React, Vite, GSAP (ScrollTrigger), Lenis, Framer Motion, Lucide.
+React, Vite, GSAP (ScrollTrigger), Lenis, Lucide, react-icons (logos des réseaux sociaux).
 
 ## Lancer le projet
 
