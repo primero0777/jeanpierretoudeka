@@ -10,7 +10,7 @@ export default function Footer() {
           <p>Conducteur de travaux génie civil<br />Lomé, Togo</p>
         </div>
         <p>© 2026. Tous droits réservés.</p>
-        <a href="#top" onClick={(e) => { e.preventDefault(); scrollToTarget(0) }}>Retour en haut <ArrowUp size={16} aria-hidden="true" /></a>
+        <a className="to-top" href="#top" onClick={(e) => { e.preventDefault(); scrollToTarget(0) }} aria-label="Retour en haut"><ArrowUp size={20} aria-hidden="true" /></a>
       </div>
     </footer>
   )

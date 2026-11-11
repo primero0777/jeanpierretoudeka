@@ -14,7 +14,6 @@ export default function Hero({ ready }) {
         .from('.hero-id > *', { y: 20, autoAlpha: 0, duration: 0.8, stagger: 0.08 })
         .from('.hero-title .line-in', { yPercent: 110, duration: 1.2, stagger: 0.1 }, 0.1)
         .from('.hero-rule', { scaleX: 0, duration: 1.2, ease: 'power3.inOut' }, 0.5)
-        .from('.hero-grid span', { scaleY: 0, duration: 1.4, stagger: 0.06, ease: 'power3.inOut' }, 0.2)
         .from('.hero-foot > *', { y: 24, autoAlpha: 0, duration: 0.9, stagger: 0.1 }, 0.9)
     }, ref)
     return () => ctx.revert()
@@ -23,7 +22,6 @@ export default function Hero({ ready }) {
   return (
     <section className="hero" id="top" ref={ref}>
       <div className="hero-bg" aria-hidden="true"><img src="./photos/facade-plongee.webp" alt="" fetchpriority="high" /></div>
-      <div className="hero-grid" aria-hidden="true"><span /><span /><span /><span /><span /></div>
       <div className="wrap hero-inner">
         <div className="hero-id">
           <p className="hero-name">Jean-Pierre Toudeka</p>

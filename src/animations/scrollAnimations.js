@@ -23,7 +23,6 @@ export function initScrollAnimations(root) {
       if (img) gsap.fromTo(img, { scale: 1.12 }, { scale: 1, duration: 1.6, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 86%' } })
     })
     gsap.to('.hero-bg', { yPercent: 18, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } })
-    gsap.to('.hero-grid', { yPercent: 14, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } })
   }, root)
   const refresh = () => ScrollTrigger.refresh()
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh)
