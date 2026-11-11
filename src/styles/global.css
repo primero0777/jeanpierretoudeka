@@ -150,17 +150,23 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* Contact */
 .contact-side { display: grid; gap: 12px; align-content: start; }
-.action { border-radius: 18px; display: flex; align-items: center; gap: 16px; padding: clamp(18px, 2.2vw, 28px); border: 1px solid var(--line); font-family: var(--display); font-weight: 600; font-size: clamp(1.05rem, 1.6vw, 1.4rem); transition: background 0.3s, color 0.3s, border-color 0.3s; }
-.action svg { flex: none; color: var(--yellow); transition: color 0.3s; }
-.action-title { font-family: var(--display); font-weight: 600; font-size: clamp(1.05rem, 1.6vw, 1.35rem); }
-.action-links { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 4px; font-family: var(--body); font-weight: 400; font-size: 0.95rem; color: var(--muted); }
-.action-links a { transition: color 0.3s; }
-.action-links a:hover { color: var(--yellow); }
-a.action:hover { border-color: rgba(245, 197, 24, 0.6); }
-a.action:hover .action-links { color: var(--yellow); }
-.socials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
-.socials a { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; color: var(--text); background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.14); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); transition: background 0.3s, color 0.3s, border-color 0.3s; }
-.socials a:hover { background: rgba(245, 197, 24, 0.82); border-color: rgba(255, 228, 120, 0.7); color: var(--bg); }
+.cc { padding: 20px 22px; border: 1px solid var(--line); border-radius: 18px; }
+.cc-label { display: flex; align-items: center; gap: 8px; font-family: var(--meta); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.cc-label svg { color: var(--yellow); }
+.cc-list li { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 6px 0; }
+.cc-list li + li { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 6px; }
+.cc-value { font-family: var(--display); font-weight: 600; font-size: clamp(1.2rem, 1.9vw, 1.55rem); letter-spacing: -0.01em; color: var(--text); overflow-wrap: anywhere; margin-right: auto; transition: color 0.3s; }
+.cc-value:hover { color: var(--yellow); }
+.chip-wa { display: inline-flex; align-items: center; gap: 6px; font-family: var(--meta); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.06em; padding: 6px 11px; border-radius: 999px; color: var(--yellow); border: 1px solid rgba(245, 197, 24, 0.45); background: rgba(245, 197, 24, 0.08); transition: background 0.3s, color 0.3s; }
+.chip-wa:hover { background: rgba(245, 197, 24, 0.85); color: var(--bg); }
+.copy { display: inline-flex; align-items: center; gap: 6px; font-family: var(--meta); font-size: 0.74rem; font-weight: 600; padding: 6px 11px; border-radius: 999px; color: var(--muted); border: 1px solid var(--line); background: rgba(255, 255, 255, 0.04); transition: color 0.3s, border-color 0.3s; }
+.copy:hover { color: var(--text); border-color: rgba(255, 255, 255, 0.3); }
+.copy.is-done { color: var(--yellow); border-color: rgba(245, 197, 24, 0.5); }
+.socials { display: flex; flex-wrap: wrap; gap: 10px; }
+.socials a { position: relative; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; color: var(--text); background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.14); transition: background 0.3s, color 0.3s, border-color 0.3s; }
+.socials a:hover, .socials a:focus-visible { background: rgba(245, 197, 24, 0.82); border-color: rgba(255, 228, 120, 0.7); color: var(--bg); }
+.socials .tip { position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translate(-50%, 4px); white-space: nowrap; font-family: var(--meta); font-size: 0.72rem; font-weight: 700; padding: 5px 9px; border-radius: 999px; background: var(--text); color: var(--bg); opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; }
+.socials a:hover .tip, .socials a:focus-visible .tip { opacity: 1; transform: translate(-50%, 0); }
 .contact-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(36px, 7vw, 120px); }
 .form { display: grid; gap: 22px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
@@ -205,10 +211,34 @@ a.action:hover .action-links { color: var(--yellow); }
   .rows li { grid-template-columns: 1fr; gap: 6px; }
   .rows li:hover { padding-left: 0; }
   .contact-side { display: grid; gap: 12px; align-content: start; }
+.cc { padding: 20px 22px; border: 1px solid var(--line); border-radius: 18px; }
+.cc-label { display: flex; align-items: center; gap: 8px; font-family: var(--meta); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.cc-label svg { color: var(--yellow); }
+.cc-list li { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; padding: 6px 0; }
+.cc-list li + li { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 6px; }
+.cc-value { font-family: var(--display); font-weight: 600; font-size: clamp(1.2rem, 1.9vw, 1.55rem); letter-spacing: -0.01em; color: var(--text); overflow-wrap: anywhere; margin-right: auto; transition: color 0.3s; }
+.cc-value:hover { color: var(--yellow); }
+.chip-wa { display: inline-flex; align-items: center; gap: 6px; font-family: var(--meta); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.06em; padding: 6px 11px; border-radius: 999px; color: var(--yellow); border: 1px solid rgba(245, 197, 24, 0.45); background: rgba(245, 197, 24, 0.08); transition: background 0.3s, color 0.3s; }
+.chip-wa:hover { background: rgba(245, 197, 24, 0.85); color: var(--bg); }
+.copy { display: inline-flex; align-items: center; gap: 6px; font-family: var(--meta); font-size: 0.74rem; font-weight: 600; padding: 6px 11px; border-radius: 999px; color: var(--muted); border: 1px solid var(--line); background: rgba(255, 255, 255, 0.04); transition: color 0.3s, border-color 0.3s; }
+.copy:hover { color: var(--text); border-color: rgba(255, 255, 255, 0.3); }
+.copy.is-done { color: var(--yellow); border-color: rgba(245, 197, 24, 0.5); }
+.socials { display: flex; flex-wrap: wrap; gap: 10px; }
+.socials a { position: relative; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; color: var(--text); background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.14); transition: background 0.3s, color 0.3s, border-color 0.3s; }
+.socials a:hover, .socials a:focus-visible { background: rgba(245, 197, 24, 0.82); border-color: rgba(255, 228, 120, 0.7); color: var(--bg); }
+.socials .tip { position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translate(-50%, 4px); white-space: nowrap; font-family: var(--meta); font-size: 0.72rem; font-weight: 700; padding: 5px 9px; border-radius: 999px; background: var(--text); color: var(--bg); opacity: 0; pointer-events: none; transition: opacity 0.2s, transform 0.2s; }
+.socials a:hover .tip, .socials a:focus-visible .tip { opacity: 1; transform: translate(-50%, 0); }
   .case-photos { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .rows li, .mini div { grid-template-columns: 1fr; gap: 2px; }
+  .copy { padding: 7px; }
+  .copy span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .copy.is-done span { position: static; width: auto; height: auto; clip: auto; }
+  .cc-value { font-size: 1.12rem; }
+  .cc-list li { gap: 8px; }
+  .chip-wa { padding: 6px 9px; }
+  .cc { padding: 18px 16px; }
   .project-role span { display: block; margin: 4px 0 0; }
   .hero-title { font-size: 13vw; }
   .hero-stat { padding: 10px 12px; max-width: 150px; }

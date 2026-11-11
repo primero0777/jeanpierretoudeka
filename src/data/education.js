@@ -25,7 +25,7 @@ export const leadership = [
 export const contact = {
   phones: [
     { label: '+228 98 06 77 44', href: 'tel:+22898067744' },
-    { label: '+228 71 36 48 35', href: 'tel:+22871364835' },
+    { label: '+228 71 36 48 35', href: 'tel:+22871364835', whatsapp: 'https://wa.me/22871364835' },
   ],
   email: 'binaeltoudeka@gmail.com',
   linkedin: 'https://linkedin.com/in/jeanpierretoudeka',
