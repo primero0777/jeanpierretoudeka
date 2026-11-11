@@ -149,14 +149,18 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .mini dd { color: var(--muted); font-size: 0.93rem; }
 
 /* Contact */
-.contact-actions { display: grid; gap: 12px; align-content: start; }
-.contact-actions .magnetic { display: block; }
+.contact-side { display: grid; gap: 12px; align-content: start; }
 .action { border-radius: 18px; display: flex; align-items: center; gap: 16px; padding: clamp(18px, 2.2vw, 28px); border: 1px solid var(--line); font-family: var(--display); font-weight: 600; font-size: clamp(1.05rem, 1.6vw, 1.4rem); transition: background 0.3s, color 0.3s, border-color 0.3s; }
-.action small { display: block; font-family: var(--body); font-weight: 400; font-size: 0.88rem; color: var(--muted); margin-top: 2px; transition: color 0.3s; }
-.action:hover small { color: var(--bg); }
 .action svg { flex: none; color: var(--yellow); transition: color 0.3s; }
-.action:hover { background: var(--yellow); border-color: var(--yellow); color: var(--bg); }
-.action:hover svg { color: var(--bg); }
+.action-title { font-family: var(--display); font-weight: 600; font-size: clamp(1.05rem, 1.6vw, 1.35rem); }
+.action-links { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 4px; font-family: var(--body); font-weight: 400; font-size: 0.95rem; color: var(--muted); }
+.action-links a { transition: color 0.3s; }
+.action-links a:hover { color: var(--yellow); }
+a.action:hover { border-color: rgba(245, 197, 24, 0.6); }
+a.action:hover .action-links { color: var(--yellow); }
+.socials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.socials a { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; color: var(--text); background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.14); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); transition: background 0.3s, color 0.3s, border-color 0.3s; }
+.socials a:hover { background: rgba(245, 197, 24, 0.82); border-color: rgba(255, 228, 120, 0.7); color: var(--bg); }
 .contact-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(36px, 7vw, 120px); }
 .form { display: grid; gap: 22px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
@@ -200,7 +204,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   .project-meta { text-align: left; }
   .rows li { grid-template-columns: 1fr; gap: 6px; }
   .rows li:hover { padding-left: 0; }
-  .contact-actions { display: grid; gap: 12px; align-content: start; }
+  .contact-side { display: grid; gap: 12px; align-content: start; }
   .case-photos { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {

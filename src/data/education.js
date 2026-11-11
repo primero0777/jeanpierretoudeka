@@ -29,5 +29,13 @@ export const contact = {
   ],
   email: 'binaeltoudeka@gmail.com',
   linkedin: 'https://linkedin.com/in/jeanpierretoudeka',
+  // Réseaux sociaux : coller l'adresse du profil dans url. Une icône sans url n'est pas affichée.
+  socials: [
+    { id: 'linkedin', label: 'LinkedIn', url: 'https://linkedin.com/in/jeanpierretoudeka' },
+    { id: 'facebook', label: 'Facebook', url: '' },
+    { id: 'instagram', label: 'Instagram', url: '' },
+    { id: 'tiktok', label: 'TikTok', url: '' },
+    { id: 'whatsapp', label: 'WhatsApp', url: '' },
+  ],
   address: 'Adidogomé Wessomé, Lomé, Togo',
 }
