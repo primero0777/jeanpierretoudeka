@@ -1,17 +1,14 @@
-import { ClipboardList, Grid2x2, Zap, Users, ShieldCheck, Handshake, DraftingCompass, Square } from 'lucide-react'
-
-const Icons = { ClipboardList, Grid2x2, Zap, Users, ShieldCheck, Handshake, DraftingCompass }
+const keepCase = ['ArchiCAD', 'AutoCAD', 'Word, Excel, PowerPoint']
+const lower = (s, i) => (i === 0 || keepCase.includes(s) || !/^\p{Lu}\p{Ll}/u.test(s) ? s : s[0].toLocaleLowerCase('fr') + s.slice(1))
 
 export default function SkillCard({ skill, index }) {
-  const Icon = Icons[skill.icon] || Square
   return (
     <article className="skill">
-      <div className="skill-top">
-        <span className="skill-num">{String(index + 1).padStart(2, '0')}</span>
-        <Icon size={26} strokeWidth={1.25} aria-hidden="true" />
+      <span className="skill-num">{String(index + 1).padStart(2, '0')}</span>
+      <div>
+        <h3>{skill.title}</h3>
+        <p>{skill.items.map(lower).join(', ')}.</p>
       </div>
-      <h3>{skill.title}</h3>
-      <ul>{skill.items.map((i) => <li key={i}>{i}</li>)}</ul>
     </article>
   )
 }

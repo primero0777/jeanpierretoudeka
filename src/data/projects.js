@@ -4,7 +4,7 @@ export const projects = [
   {
     id: 'mrode',
     title: "Annexe de l'hôtel M'RODE",
-    kind: 'Étude de cas',
+    role: 'Conducteur de travaux',
     category: 'Conduite de travaux, finitions du bâtiment',
     place: 'Lomé, Togo',
     period: 'Août 2024 à novembre 2026',
@@ -22,7 +22,7 @@ export const projects = [
   {
     id: 'dubs',
     title: 'DUBS & Fils',
-    kind: 'Expérience',
+    role: 'Conducteur de travaux',
     category: 'Opérations de chantier',
     place: 'Lomé, Togo',
     period: 'Mars 2023 à juin 2024',
@@ -35,7 +35,7 @@ export const projects = [
   {
     id: 'terramarketer',
     title: 'TERRAMARKETER',
-    kind: 'Expérience',
+    role: "Stagiaire, bureau d'études",
     category: "Études techniques, bureau d'études",
     place: 'Lomé, Togo',
     period: 'Juillet à septembre 2023',

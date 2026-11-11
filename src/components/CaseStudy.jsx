@@ -28,7 +28,7 @@ export default function CaseStudy({ project, onClose }) {
       transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}>
       <div className="wrap case-inner">
         <button ref={closeRef} className="case-close" onClick={onClose}><X size={18} aria-hidden="true" /> Fermer</button>
-        <p className="section-label"><span>{project.kind}</span> / {project.category}</p>
+        <p className="section-label"><span>{project.role}</span> / {project.category}</p>
         <h2 id="case-title" className="section-title">{project.title}</h2>
         <div className="case-grid">
           <dl className="case-facts">

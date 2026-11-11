@@ -5,12 +5,9 @@ import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import Hero from './sections/Hero.jsx'
 import About from './sections/About.jsx'
-import Experience from './sections/Experience.jsx'
 import Expertise from './sections/Expertise.jsx'
 import Projects from './sections/Projects.jsx'
 import Education from './sections/Education.jsx'
-import Leadership from './sections/Leadership.jsx'
-import Philosophy from './sections/Philosophy.jsx'
 import Contact from './sections/Contact.jsx'
 import { startSmoothScroll } from './animations/smoothScroll'
 import { initScrollAnimations } from './animations/scrollAnimations'
@@ -38,12 +35,9 @@ export default function App() {
       <main>
         <Hero ready={ready} />
         <About />
-        <Experience />
-        <Expertise />
         <Projects />
+        <Expertise />
         <Education />
-        <Leadership />
-        <Philosophy />
         <Contact />
       </main>
       <Footer />

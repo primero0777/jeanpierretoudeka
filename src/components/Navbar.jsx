@@ -8,7 +8,7 @@ const links = [
   { id: 'a-propos', label: 'À propos' },
   { id: 'parcours', label: 'Parcours' },
   { id: 'expertise', label: 'Expertise' },
-  { id: 'projets', label: 'Projets' },
+  { id: 'formation', label: 'Formation' },
 ]
 
 export default function Navbar() {

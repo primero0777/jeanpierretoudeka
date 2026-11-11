@@ -1,8 +1,6 @@
 import SectionHead from '../components/SectionHead.jsx'
 import portrait from '../assets/portrait.webp'
 
-const keys = ['Conduite de travaux', 'Coordination technique', "Leadership d'équipe", 'Qualité et sécurité']
-
 export default function About() {
   return (
     <section className="section about" id="a-propos">
@@ -16,9 +14,6 @@ export default function About() {
               <p>Je prends en charge la finition carrelage, l'aménagement complet et les systèmes techniques (plomberie, électricité), de la préparation à la réception.</p>
               <p>Trois ans de management en organisation internationale : je sais fédérer une équipe sans levier hiérarchique.</p>
             </div>
-            <ul className="about-keys" data-stagger>
-              {keys.map((k) => <li key={k}>{k}</li>)}
-            </ul>
           </div>
           <figure className="about-portrait">
             <div className="portrait-frame" data-mask>

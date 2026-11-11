@@ -9,11 +9,11 @@ export default function Projects() {
   const [open, setOpen] = useState(null)
   const close = useCallback(() => setOpen(null), [])
   return (
-    <section className="section" id="projets">
+    <section className="section" id="parcours">
       <div className="wrap">
-        <SectionHead num="04" label="Réalisations" lines={['Construit', 'avec intention.']} />
+        <SectionHead num="02" label="Parcours" lines={['Chantier', 'par chantier.']} />
         <div className="projects">
-          {projects.map((p, i) => <ProjectCard key={p.id} project={p} index={i} onOpen={setOpen} />)}
+          {projects.map((p) => <ProjectCard key={p.id} project={p} onOpen={setOpen} />)}
         </div>
       </div>
       <AnimatePresence>{open && <CaseStudy project={open} onClose={close} />}</AnimatePresence>

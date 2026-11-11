@@ -22,14 +22,6 @@ export function initScrollAnimations(root) {
       const img = el.querySelector('img')
       if (img) gsap.fromTo(img, { scale: 1.12 }, { scale: 1, duration: 1.6, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 86%' } })
     })
-    const tl = root.querySelector('.timeline')
-    if (tl) {
-      gsap.fromTo('.timeline-progress', { scaleY: 0 }, { scaleY: 1, ease: 'none', scrollTrigger: { trigger: tl, start: 'top 65%', end: 'bottom 65%', scrub: true } })
-    }
-    const philo = root.querySelector('.philo')
-    if (philo) {
-      gsap.fromTo('.philo .w', { opacity: 0.14 }, { opacity: 1, stagger: 0.12, ease: 'none', scrollTrigger: { trigger: philo, start: 'top 65%', end: 'center 45%', scrub: true } })
-    }
     gsap.to('.hero-bg', { yPercent: 18, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } })
     gsap.to('.hero-grid', { yPercent: 14, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } })
   }, root)
