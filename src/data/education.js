@@ -33,8 +33,8 @@ export const contact = {
   socials: [
     { id: 'linkedin', label: 'LinkedIn', url: 'https://linkedin.com/in/jeanpierretoudeka' },
     { id: 'facebook', label: 'Facebook', url: '' },
-    { id: 'instagram', label: 'Instagram', url: '' },
-    { id: 'tiktok', label: 'TikTok', url: '' },
+    { id: 'instagram', label: 'Instagram', url: 'https://www.instagram.com/dubson_dick/' },
+    { id: 'tiktok', label: 'TikTok', url: 'https://www.tiktok.com/@dubson.dick' },
     { id: 'whatsapp', label: 'WhatsApp', url: '' },
   ],
   address: 'Adidogomé Wessomé, Lomé, Togo',
