@@ -3,11 +3,11 @@ import { ArrowDown } from 'lucide-react'
 import Lines from '../components/Lines.jsx'
 import { gsap, reducedMotion } from '../animations/gsapConfig'
 
-export default function Hero({ ready }) {
+export default function Hero() {
   const ref = useRef(null)
 
   useEffect(() => {
-    if (!ready || reducedMotion()) return
+    if (reducedMotion()) return
     const ctx = gsap.context(() => {
       gsap.timeline({ defaults: { ease: 'power4.out' } })
         .fromTo('.hero-bg img', { scale: 1.18, opacity: 0 }, { scale: 1.04, opacity: 1, duration: 2.4, ease: 'power3.out' }, 0)
@@ -17,7 +17,7 @@ export default function Hero({ ready }) {
         .from('.hero-foot > *', { y: 24, autoAlpha: 0, duration: 0.9, stagger: 0.1 }, 0.9)
     }, ref)
     return () => ctx.revert()
-  }, [ready])
+  }, [])
 
   return (
     <section className="hero" id="top" ref={ref}>

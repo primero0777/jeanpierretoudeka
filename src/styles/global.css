@@ -20,13 +20,6 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .line { display: block; overflow: hidden; padding: 0.18em 0 0.1em; margin: -0.18em 0 -0.1em; }
 .line-in { display: block; will-change: transform; }
 
-/* Préchargement */
-.preloader { position: fixed; inset: 0; z-index: 200; background: var(--bg); display: grid; place-items: center; }
-.pre-inner { display: flex; align-items: baseline; gap: 28px; font-family: var(--display); }
-.pre-initials { font-size: clamp(3rem, 8vw, 6rem); font-weight: 700; letter-spacing: -0.04em; }
-.pre-count { font-family: var(--meta); font-size: 0.95rem; color: var(--muted); font-variant-numeric: tabular-nums; }
-.pre-line { position: absolute; left: 0; right: 0; top: calc(50% + clamp(40px, 6vw, 64px)); height: 1px; background: var(--yellow); transform-origin: left; transform: scaleX(0); }
-
 /* Curseur */
 .cursor { position: fixed; left: 0; top: 0; z-index: 150; width: 10px; height: 10px; margin: -5px 0 0 -5px; border-radius: 50%; background: var(--yellow); pointer-events: none; opacity: 0; display: grid; place-items: center; transition: width 0.35s var(--ease), height 0.35s var(--ease), margin 0.35s var(--ease), opacity 0.3s; }
 .cursor.is-on { opacity: 1; }
