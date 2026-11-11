@@ -42,8 +42,8 @@ export default function CaseStudy({ project, onClose }) {
           </div>
         </div>
         <div className="case-photos">
-          <PhotoSlot src={project.image} alt={project.title} hint={project.imageHint} ratio="16 / 9" className="wide" />
-          {project.gallery.map((g, i) => <PhotoSlot key={i} src={g.image} alt={g.hint} hint={g.hint} ratio="4 / 3" />)}
+          <PhotoSlot src={project.image} hint={project.imageHint} ratio="16 / 9" className="wide" caption />
+          {project.gallery.map((g, i) => <PhotoSlot key={i} src={g.image} hint={g.hint} ratio={g.ratio || '4 / 3'} className={g.wide ? 'wide' : ''} caption />)}
         </div>
       </div>
     </motion.div>

@@ -30,6 +30,7 @@ export function initScrollAnimations(root) {
     if (philo) {
       gsap.fromTo('.philo .w', { opacity: 0.14 }, { opacity: 1, stagger: 0.12, ease: 'none', scrollTrigger: { trigger: philo, start: 'top 65%', end: 'center 45%', scrub: true } })
     }
+    gsap.to('.hero-bg', { yPercent: 18, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } })
     gsap.to('.hero-grid', { yPercent: 14, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } })
   }, root)
   const refresh = () => ScrollTrigger.refresh()

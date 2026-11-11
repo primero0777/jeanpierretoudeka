@@ -10,6 +10,7 @@ export default function Hero({ ready }) {
     if (!ready || reducedMotion()) return
     const ctx = gsap.context(() => {
       gsap.timeline({ defaults: { ease: 'power4.out' } })
+        .fromTo('.hero-bg img', { scale: 1.18, opacity: 0 }, { scale: 1.04, opacity: 1, duration: 2.4, ease: 'power3.out' }, 0)
         .from('.hero-id > *', { y: 20, autoAlpha: 0, duration: 0.8, stagger: 0.08 })
         .from('.hero-title .line-in', { yPercent: 110, duration: 1.2, stagger: 0.1 }, 0.1)
         .from('.hero-rule', { scaleX: 0, duration: 1.2, ease: 'power3.inOut' }, 0.5)
@@ -21,6 +22,7 @@ export default function Hero({ ready }) {
 
   return (
     <section className="hero" id="top" ref={ref}>
+      <div className="hero-bg" aria-hidden="true"><img src="./photos/facade-plongee.webp" alt="" fetchpriority="high" /></div>
       <div className="hero-grid" aria-hidden="true"><span /><span /><span /><span /><span /></div>
       <div className="wrap hero-inner">
         <div className="hero-id">

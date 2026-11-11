@@ -10,11 +10,13 @@ export const projects = [
     period: 'Août 2024 à novembre 2026',
     text: "Pilotage et coordination des travaux de finition et des systèmes techniques d'un établissement recevant du public.",
     scope: ['Carrelage et revêtements', 'Plomberie', 'Électricité', 'Encadrement des équipes', 'Suivi hygiène, qualité, sécurité', 'Conformité ERP'],
-    image: null,
-    imageHint: 'Finitions, surfaces intérieures',
+    image: './photos/mrode-chambre-baignoire.webp',
+    imageHint: "Chambre de l'annexe : sol marbré, paroi vitrée, baignoire îlot",
     gallery: [
-      { image: null, hint: 'Carrelage et revêtements' },
-      { image: null, hint: 'Installations techniques' },
+      { image: './photos/mrode-chantier-facade.webp', hint: 'Façade pendant les travaux', ratio: '3 / 4' },
+      { image: './photos/mrode-salle-de-bain.webp', hint: 'Salle de bain : carrelage, plomberie, électricité', ratio: '3 / 4' },
+      { image: './photos/mrode-panneaux-muraux.webp', hint: 'Panneaux muraux à joints laiton, éclairage', ratio: '4 / 3' },
+      { image: './photos/mrode-facade.webp', hint: "L'annexe terminée", ratio: '4 / 3' },
     ],
   },
   {

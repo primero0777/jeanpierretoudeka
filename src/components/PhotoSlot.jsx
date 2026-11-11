@@ -1,10 +1,10 @@
 // Cadre photo. Sans image, il affiche un emplacement clairement marqué "à fournir"
 // (le rectangle barré d'une croix est la convention des plans pour une image à venir).
-export default function PhotoSlot({ src, alt = '', hint, ratio = '4 / 3', className = '' }) {
-  return (
-    <div className={`photo-slot ${src ? 'has-img' : 'is-empty'} ${className}`} style={{ aspectRatio: ratio }}>
+export default function PhotoSlot({ src, alt = '', hint, ratio = '4 / 3', className = '', caption = false }) {
+  const slot = (
+    <div className={`photo-slot ${src ? 'has-img' : 'is-empty'} ${caption && src ? '' : className}`} style={{ aspectRatio: ratio }}>
       {src ? (
-        <img src={src} alt={alt} loading="lazy" decoding="async" />
+        <img src={src} alt={alt || hint || ''} loading="lazy" decoding="async" />
       ) : (
         <>
           <svg className="photo-cross" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
@@ -16,4 +16,6 @@ export default function PhotoSlot({ src, alt = '', hint, ratio = '4 / 3', classN
       )}
     </div>
   )
+  if (!caption || !src) return slot
+  return <figure className={`photo-fig ${className}`}>{slot}<figcaption>{hint}</figcaption></figure>
 }

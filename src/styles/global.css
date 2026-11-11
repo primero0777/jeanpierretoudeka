@@ -54,6 +54,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* Ouverture */
 .hero { position: relative; min-height: 100svh; display: flex; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; overflow: hidden; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 35%; transform: scale(1.04); }
+.hero-bg::after { content: ''; position: absolute; inset: 0; background: rgba(17, 17, 17, 0.8); }
 .hero-grid { position: absolute; inset: 0; display: grid; grid-template-columns: repeat(5, 1fr); padding-inline: var(--gutter); pointer-events: none; }
 .hero-grid span { border-left: 1px solid var(--line); transform-origin: top; }
 .hero-grid span:last-child { border-right: 1px solid var(--line); }
@@ -161,6 +164,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .case-sub { font-family: var(--meta); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--yellow); margin: 36px 0 14px; }
 .case-photos { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(16px, 2vw, 28px); }
 .case-photos .wide { grid-column: 1 / -1; }
+.photo-fig figcaption { font-family: var(--meta); font-size: 0.85rem; color: var(--muted); padding-top: 10px; }
 
 /* Formation */
 .rows { border-top: 1px solid var(--line); }
