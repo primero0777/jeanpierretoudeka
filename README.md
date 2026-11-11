@@ -38,3 +38,6 @@ service comme Formspree ou EmailJS dans `src/components/ContactForm.jsx`.
 
 La branche `main` contient le code source. La branche `gh-pages` contient le site généré (`dist/`),
 c'est elle que GitHub Pages doit servir.
+
+Le site est servi sur le domaine **jptoudeka.com**. Le fichier `public/CNAME` doit rester en place :
+il est copié dans `dist/` à chaque build, et sans lui GitHub Pages abandonne le domaine.
