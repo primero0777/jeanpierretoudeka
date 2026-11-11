@@ -1,4 +1,4 @@
-import { Mail, Phone, Share2 } from 'lucide-react'
+import { Download, FileText, Mail, Phone, Share2 } from 'lucide-react'
 import { FaLinkedinIn, FaFacebookF, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa6'
 import SectionHead from '../components/SectionHead.jsx'
 import ContactForm from '../components/ContactForm.jsx'
@@ -42,6 +42,13 @@ export default function Contact() {
                   <CopyButton value={contact.email} label="Copier l'adresse e-mail" />
                 </li>
               </ul>
+            </div>
+            <div className="cc cc-cv">
+              <p className="cc-label"><FileText size={15} aria-hidden="true" />CV</p>
+              <a className="cv-link" href={contact.cv} download="CV-Jean-Pierre-Toudeka.pdf" target="_blank" rel="noopener">
+                <span>Télécharger mon CV<small>PDF, 1 page</small></span>
+                <Download size={20} aria-hidden="true" />
+              </a>
             </div>
             {socials.length > 0 && (
               <div className="cc">

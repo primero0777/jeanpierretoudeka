@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
-import { ArrowUpRight } from 'lucide-react'
+import { Download } from 'lucide-react'
+import { contact } from '../data/education'
 import Lines from '../components/Lines.jsx'
 import Magnetic from '../components/Magnetic.jsx'
 import { gsap, reducedMotion } from '../animations/gsapConfig'
@@ -34,7 +35,7 @@ export default function Hero() {
           <p className="hero-desc">Jean-Pierre Toudeka. Je mène les chantiers de bâtiment de la préparation à la réception : finitions, plomberie, électricité et équipes.</p>
           <div className="hero-actions">
             <Magnetic strength={0.15}><a className="btn-yellow" href="#parcours" onClick={(e) => go(e, '#parcours')}>Voir mes chantiers</a></Magnetic>
-            <a className="btn-line" href="#contact" onClick={(e) => go(e, '#contact')}>Me contacter <ArrowUpRight size={16} aria-hidden="true" /></a>
+            <a className="btn-line" href={contact.cv} download="CV-Jean-Pierre-Toudeka.pdf" target="_blank" rel="noopener">Télécharger mon CV <Download size={16} aria-hidden="true" /></a>
           </div>
         </div>
 

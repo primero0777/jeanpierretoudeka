@@ -28,6 +28,7 @@ export const contact = {
     { label: '+228 71 36 48 35', href: 'tel:+22871364835', whatsapp: 'https://wa.me/22871364835' },
   ],
   email: 'binaeltoudeka@gmail.com',
+  cv: './cv/CV-Jean-Pierre-Toudeka.pdf',
   linkedin: 'https://linkedin.com/in/jeanpierretoudeka',
   // Réseaux sociaux : coller l'adresse du profil dans url. Une icône sans url n'est pas affichée.
   socials: [

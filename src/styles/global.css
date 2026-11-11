@@ -162,6 +162,11 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .copy { display: inline-flex; align-items: center; gap: 6px; font-family: var(--meta); font-size: 0.74rem; font-weight: 600; padding: 6px 11px; border-radius: 999px; color: var(--muted); border: 1px solid var(--line); background: rgba(255, 255, 255, 0.04); transition: color 0.3s, border-color 0.3s; }
 .copy:hover { color: var(--text); border-color: rgba(255, 255, 255, 0.3); }
 .copy.is-done { color: var(--yellow); border-color: rgba(245, 197, 24, 0.5); }
+.cv-link { display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: var(--display); font-weight: 600; font-size: clamp(1.1rem, 1.7vw, 1.35rem); transition: color 0.3s; }
+.cv-link small { display: block; font-family: var(--meta); font-size: 0.78rem; font-weight: 500; color: var(--muted); margin-top: 2px; }
+.cv-link svg { flex: none; width: 44px; height: 44px; padding: 11px; border-radius: 50%; color: var(--bg); background: rgba(245, 197, 24, 0.82); border: 1px solid rgba(255, 228, 120, 0.7); transition: transform 0.3s; }
+.cv-link:hover { color: var(--yellow); }
+.cv-link:hover svg { transform: translateY(2px); }
 .socials { display: flex; flex-wrap: wrap; gap: 10px; }
 .socials a { position: relative; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; color: var(--text); background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.14); transition: background 0.3s, color 0.3s, border-color 0.3s; }
 .socials a:hover, .socials a:focus-visible { background: rgba(245, 197, 24, 0.82); border-color: rgba(255, 228, 120, 0.7); color: var(--bg); }
