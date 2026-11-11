@@ -1,0 +1,46 @@
+// Pour ajouter une vraie photo : déposer le fichier dans public/photos/
+// puis remplacer `image: null` par `image: './photos/nom-du-fichier.webp'`.
+export const projects = [
+  {
+    id: 'mrode',
+    title: "Annexe de l'hôtel M'RODE",
+    kind: 'Étude de cas',
+    category: 'Conduite de travaux, finitions du bâtiment',
+    place: 'Lomé, Togo',
+    period: 'Août 2024 à novembre 2026',
+    text: "Pilotage et coordination des travaux de finition et des systèmes techniques d'un établissement recevant du public.",
+    scope: ['Carrelage et revêtements', 'Plomberie', 'Électricité', 'Encadrement des équipes', 'Suivi hygiène, qualité, sécurité', 'Conformité ERP'],
+    image: null,
+    imageHint: 'Finitions, surfaces intérieures',
+    gallery: [
+      { image: null, hint: 'Carrelage et revêtements' },
+      { image: null, hint: 'Installations techniques' },
+    ],
+  },
+  {
+    id: 'dubs',
+    title: 'DUBS & Fils',
+    kind: 'Expérience',
+    category: 'Opérations de chantier',
+    place: 'Lomé, Togo',
+    period: 'Mars 2023 à juin 2024',
+    text: 'Gestion technique et opérationnelle des chantiers : planification des travaux, achat des matériaux et suivi des approvisionnements.',
+    scope: ['Planification des travaux', 'Achat des matériaux', 'Suivi des approvisionnements'],
+    image: null,
+    imageHint: 'Chantier, structure en cours',
+    gallery: [],
+  },
+  {
+    id: 'terramarketer',
+    title: 'TERRAMARKETER',
+    kind: 'Expérience',
+    category: "Études techniques, bureau d'études",
+    place: 'Lomé, Togo',
+    period: 'Juillet à septembre 2023',
+    text: 'Conception et dimensionnement sur DAO avec ArchiCAD et AutoCAD, calcul des éléments de structure.',
+    scope: ['ArchiCAD', 'AutoCAD', 'Calcul des éléments de structure'],
+    image: null,
+    imageHint: 'Plan ou dessin technique',
+    gallery: [],
+  },
+]

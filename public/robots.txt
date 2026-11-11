@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://primero0777.github.io/jeanpierretoudeka/sitemap.xml
